@@ -1,4 +1,4 @@
-import {createApp, defineCustomElement, h} from 'vue'
+import {createApp, h} from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { createPinia } from "pinia";
 import { Tooltip } from "bootstrap";
@@ -24,7 +24,6 @@ if (themeMode === "system") {
     themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
-//document.documentElement.setAttribute("data-bs-theme", themeMode);
 
 createInertiaApp({
     resolve: name => {

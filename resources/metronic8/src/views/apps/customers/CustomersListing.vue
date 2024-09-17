@@ -23,6 +23,7 @@
       <!--begin::Card toolbar-->
       <div class="card-toolbar">
         <!--begin::Toolbar-->
+
         <div
           v-if="selectedIds.length === 0"
           class="d-flex justify-content-end"
@@ -33,7 +34,7 @@
             type="button"
             class="btn btn-light-primary me-3"
             data-bs-toggle="modal"
-            data-bs-target="#kt_customers_export_modal"
+            data-bs-target="#kt_modal_new_card"
           >
             <KTIcon icon-name="exit-up" icon-class="fs-2" />
             Export
@@ -161,7 +162,7 @@
       </Datatable>
     </div>
   </div>
-
+<NewCardModal></NewCardModal>
   <ExportCustomerModal></ExportCustomerModal>
   <AddCustomerModal></AddCustomerModal>
 </template>
@@ -176,11 +177,13 @@ import AddCustomerModal from "@/components/modals/forms/AddCustomerModal.vue";
 import type { ICustomer } from "@/core/data/customers";
 import customers from "@/core/data/customers";
 import arraySort from "array-sort";
+import NewCardModal from "@/components/modals/forms/NewCardModal.vue";
 //import { MenuComponent } from "@/assets/ts/components";
 
 export default defineComponent({
   name: "customers-listing",
   components: {
+      NewCardModal,
     Datatable,
     ExportCustomerModal,
     AddCustomerModal,

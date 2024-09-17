@@ -21,6 +21,7 @@ createServer(page =>
         setup({ App, props, plugin }) {
             return createSSRApp({
                 render: () => h(App, props),
+
             }).use(plugin)
         },
     }),
